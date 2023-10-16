@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebaseproject/email/home.dart';
 import 'package:firebaseproject/phoneAuth/phoneHome.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  QuerySnapshot snapshot = await FirebaseFirestore.instance.collection('users').get();
+  debugPrint(snapshot.docs.toString());
   runApp(const MyApp());
 }
 
