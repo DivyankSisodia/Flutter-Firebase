@@ -11,7 +11,9 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   QuerySnapshot snapshot = await FirebaseFirestore.instance.collection('users').get();
-  debugPrint(snapshot.docs.toString());
+  for(var doc in snapshot.docs){
+    print(doc.data().toString());
+  }
   runApp(const MyApp());
 }
 
