@@ -1,3 +1,4 @@
+import 'package:firebaseproject/phoneAuth/nextPage.dart';
 import 'package:flutter/material.dart';
 
 class HomePhone extends StatefulWidget {
@@ -15,7 +16,6 @@ class _HomePhoneState extends State<HomePhone> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          
           Padding(
             padding: const EdgeInsets.all(32.0),
             child: TextFormField(
@@ -24,7 +24,12 @@ class _HomePhoneState extends State<HomePhone> {
               ),
             ),
           ),
-          FloatingActionButton(onPressed: (){}, child: const Icon(Icons.send)),
+          FloatingActionButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const PhoneHome()));
+              },
+              child: const Icon(Icons.send)),
         ],
       ),
     );
