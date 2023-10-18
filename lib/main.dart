@@ -10,6 +10,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // .get kroge toh querysnap milta h 
   QuerySnapshot snapshot = await FirebaseFirestore.instance.collection('users').get();
   for(var doc in snapshot.docs){
     print(doc.data().toString());
