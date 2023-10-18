@@ -69,7 +69,7 @@ class _PhoneHomeState extends State<PhoneHome> {
             },
             child: const Icon(Icons.next_plan_sharp),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           StreamBuilder<QuerySnapshot>(
@@ -97,11 +97,11 @@ class _PhoneHomeState extends State<PhoneHome> {
                       );
                     }
                     else {
-                      return Text("No data!");
+                      return const Text("No data!");
                     }
                   }
                   else {
-                    return Center(
+                    return const Center(
                       child: CircularProgressIndicator(),
                     );
                   }
